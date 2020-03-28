@@ -140,10 +140,10 @@ Package('org.quickcorp.custom.controllers', [
     },
     done: function (){
       var controller = this;
-      var QRScannerPath = CONFIG.get('qr-scanner-path','./js/packages/thirdparty/libs/qr-scanner/');
 
       controller.loadDependencies(function (){
 
+          var QRScannerPath = CONFIG.get('qr-scanner-path','./js/packages/thirdparty/libs/qr-scanner/');
 
           QRSCANNER.WORKER_PATH = QRScannerPath+'qr-scanner-worker.min.js';
 
@@ -160,6 +160,7 @@ Package('org.quickcorp.custom.controllers', [
               label.style.color = 'teal';
               clearTimeout(label.highlightTimeout);
               label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+//              location.href=result;
           }
 
           // ####### Web Cam Scanning #######

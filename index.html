@@ -18,10 +18,15 @@
     <!-- anchor linking to external file -->
     <p>This page needs JavaScript because it uses QCObjects (https://qcobjects.com)</p>
   </noscript>
-  <component name="layout-basic" cached=false >
-  </component>
+  <splash-screen componentClass="CubeSplashScreenComponent"
+    duration="3000" data-background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,7,51,1) 24%, rgba(20,25,25,1) 100%)"
+    data-cube_image="./img/Q_web-white.png">
+  </splash-screen>
 
-    <script type="module" src="js/init.js"></script>
+  <orientation-lock controllerClass="PortraitOrientationController"></orientation-lock>
+  <component name="layout-basic" splashscreen orientation-lock cached=false ></component>
+
+  <script type="module" src="js/init.js"></script>
 
 </body>
 

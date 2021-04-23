@@ -1,4 +1,14 @@
 <style>
+:root, :host{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 85px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: yellow;
+}
     canvas {
         display: none;
     }
@@ -12,13 +22,23 @@
     div {
         margin-bottom: 16px;
     }
+    video {
+    position: fixed;
+    transform: scaleX(-1);
+    /* max-width: 375px; */
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
 </style>
+<video muted playsinline id="qr-video"></video>
 <h1>Scan from WebCam:</h1>
 <div>
     <b>Device has camera: </b>
     <span id="cam-has-camera"></span>
     <br>
-    <video muted playsinline id="qr-video"></video>
 </div>
 <div>
     <select id="inversion-mode-select">

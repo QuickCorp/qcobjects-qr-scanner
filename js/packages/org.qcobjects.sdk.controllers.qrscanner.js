@@ -25,8 +25,27 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
 
       }
     },
-    done: function (){
+    showControls () {
+      let elementList = Tag("component[name=qrscancode] .shadowHost").pop().shadowRoot.subelements("*:not(video)");
+      if (typeof this.__show_controls__ === "undefined") {
+        this.__show_controls__ = New(Toggle, {
+          positive ({elementList, effect}) {
+            elementList.map(e=>effect.apply(e, 1, 0));
+            Tag(".showControlsSwitch").map(e=>e.textContent = "Show Controls");
+          },
+          negative ({elementList, effect}) {
+            elementList.map(e=>effect.apply(e, 0, 1))
+            Tag(".showControlsSwitch").map(e=>e.textContent = "Hide Controls");
+          },
+          args: {elementList: elementList, effect: Fade}
+
+        });
+      }
+      return this.__show_controls__.fire();
+    },
+    done (){
       var controller = this;
+      global.set("qrControllerInstance", controller);
 
       let qrscanner_load = function () {
 

@@ -25,6 +25,17 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
 
       }
     },
+    setResult(label, result) {
+        const controller = this;
+        const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
+
+        label.textContent = result;
+        camQrResultTimestamp.textContent = new Date().toString();
+        label.style.color = 'teal';
+        clearTimeout(label.highlightTimeout);
+        label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+        location.href=result;
+    },
     showControls () {
       let elementList = Tag("component[name=qrscancode] .shadowHost").pop().shadowRoot.subelements("*:not(video)");
       if (typeof this.__show_controls__ === "undefined") {
@@ -57,24 +68,15 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
           const video = controller.component.shadowRoot.subelements('#qr-video').pop();
           const camHasCamera = controller.component.shadowRoot.subelements('#cam-has-camera').pop();
           const camQrResult = controller.component.shadowRoot.subelements('#cam-qr-result').pop();
-          const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
           const fileSelector = controller.component.shadowRoot.subelements('#file-selector').pop();
           const fileQrResult = controller.component.shadowRoot.subelements('#file-qr-result').pop();
 
-          function setResult(label, result) {
-              label.textContent = result;
-              camQrResultTimestamp.textContent = new Date().toString();
-              label.style.color = 'teal';
-              clearTimeout(label.highlightTimeout);
-              label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-        //              location.href=result;
-          }
 
           // ####### Web Cam Scanning #######
 
           QRSCANNER.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
 
-          const scanner = new QRSCANNER(video, result => setResult(camQrResult, result));
+          const scanner = new QRSCANNER(video, result => controller.setResult(camQrResult, result));
           scanner.start();
 
           controller.component.shadowRoot.subelements('#inversion-mode-select').pop().addEventListener('change', event => {

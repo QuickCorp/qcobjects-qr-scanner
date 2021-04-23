@@ -29,6 +29,7 @@
 * You can change any value in runtime by using CONFIG.set
 * or changing the static initial value in a config.json file
 */
+CONFIG.set('sourceType', 'module');
 CONFIG.set('relativeImportPath', 'js/packages/');
 CONFIG.set('componentsBasePath', 'templates/components/');
 CONFIG.set('delayForReady', 1); // delay to wait before executing the first ready event, it includes imports
@@ -43,6 +44,7 @@ CONFIG.set('serviceWorkerURI','/sw.js'); //QCObjects will register an launch thi
 
 // if Component.cached is true, all the Class('Component') declarations will save the template in a localStorage cache
 // until a cached=false attribute is found in a <component> html declaration
+logger.debugEnabled = true;
 Component.cached=true;
 
 /**
@@ -53,5 +55,5 @@ Component.cached=true;
 Import('org.quickcorp.custom'); // this will load js/packages/org.quickcorp.custom.js file
 
 Ready(function (){
-  // your initial code here   
+  // your initial code here
 });

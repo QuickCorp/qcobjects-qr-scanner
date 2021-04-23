@@ -4,7 +4,7 @@
     <routing path="#signin" name="blank"></routing>
     <routing path="#page1" name="blank"></routing>
     <routing path="#page2" name="blank"></routing>
-    <routing path="#qrscan" name="blank"></routing>
+    <routing path="#page3" name="header"></routing>
     <routing path="#" name="header"></routing>
     <routing path="" name="header"></routing>
 </component>
@@ -13,17 +13,17 @@
   <nav>
     <span class="topnav">
       <component name="login">
-          <routing path="#page1" name="blank"></routing>
-          <routing path="#page2" name="blank"></routing>
-          <routing path="#page3" name="blank"></routing>
-          <routing path="#signup" name="blank"></routing>
-          <routing path="#signin" name="blank"></routing>
-          <routing path="#qrscan" name="blank"></routing>
-          <routing path="#" name="login"></routing>
-          <routing path="" name="login"></routing>
+        <routing path="#page1" name="blank"></routing>
+        <routing path="#page2" name="blank"></routing>
+        <routing path="#page3" name="blank"></routing>
+        <routing path="#signup" name="blank"></routing>
+        <routing path="#signin" name="blank"></routing>
+        <routing path="#" name="login"></routing>
+        <routing path="" name="login"></routing>
       </component>
     </span>
-    <button  aria-label="nav button" role="button" tabindex="-1" class="navbtn" onclick="GLOBAL.sideNavController.toggle()"></button>
+   <button aria-label="nav button" role="button" tabindex="-1" class="navbtn"
+      onclick="global.sideNavController.toggle()"></button>
     <component name="nav" controllerClass="SideNavController"></component>
   </nav>
 </aside>
@@ -35,7 +35,6 @@
         <routing path="#page3" name="pages/page3"></routing>
         <routing path="#signup" name="signup"></routing>
         <routing path="#signin" name="login2"></routing>
-        <routing path="#qrscan" name="qrscan"></routing>
         <routing path="#" name="contentblock"></routing>
         <routing path="" name="contentblock"></routing>
       </component>
@@ -43,7 +42,6 @@
 </main>
 <footer>
   <component name="footer">
-    <routing path="#qrscan" name="footer"></routing>
       <routing path="#signup" name="signupbuttons"></routing>
       <routing path="#page1" name="footer2"></routing>
       <routing path="#page2" name="footer2"></routing>

@@ -1,0 +1,257 @@
+/*
+Name : Flutterized QCObjects Theme
+Version : 2.0-gradient
+Author : jeanmachuca
+Author URL : https://github.com/jeanmachuca
+*/
+
+/* NAV */
+
+body {
+  background-color: #eaeaea !important;
+}
+
+component, component>section, component>article {
+    background-color: #f7f7f7 !important;
+    border-radius: 27px;
+}
+
+component>section{
+  margin-top: 5%;
+}
+
+.card {
+  background-color: white !important;
+}
+
+nav>component {
+  background: rgb(2,0,36) !important;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%) !important;
+  bottom:0 !important;
+}
+
+nav>component a {
+    font-size: 15px !important;
+    color: #28197e !important;
+}
+
+nav>component a:hover {
+    color: #4aa7dd !important;
+}
+
+nav details {
+  background: rgb(2,0,36) !important;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important;
+
+}
+
+nav details ul li a {
+  color: white !important;
+}
+
+nav details ul li a:hover {
+  color: yellow !important;
+}
+
+nav {
+    color: white !important;
+}
+
+
+
+nav {
+    text-align: justify !important;
+}
+
+nav>button.navbtn {
+  background: rgb(2,0,36) !important;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%) !important;
+  color: white !important;
+  border-radius: 100%;
+}
+
+nav>span.topnav {
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+/* HEADER */
+
+
+/* FOOTER */
+footer {
+    background: rgb(2,0,36) !important;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%) !important;
+    color: #fff !important;
+    border-radius: 19% 81% 0% 100% / 100% 29% 71% 0% !important;
+}
+
+
+/*** THEME SPECIFIC COLORS AND SETTINGS ***/
+
+header {
+    padding-top: 80px !important;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%);
+    color: white !important;
+    border-radius: 0% 100% 18% 82% / 46% 0% 100% 54% !important;
+    position: fixed !important;
+    width: 100% !important;
+    overflow: hidden;
+    z-index:11 !important;
+}
+
+.topnav {position: fixed !important;}
+
+nav,
+article {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+}
+article {
+    z-index:1 !important;
+}
+
+.topnav, header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important;
+}
+
+footer {
+    box-shadow: 1px -2px 8px rgba(0, 0, 0, .25) !important;
+}
+
+/**
+INSTALLER BUTTON
+**/
+#installerbutton{
+    margin: 0 auto !important;
+    top: -15px;
+    border-radius: 100% !important;
+}
+/** INSTALLER BUTTON **/
+
+/** buttons **/
+
+button:not(.navbtn) {
+    position: relative !important;
+    margin: 0 !important;
+    padding: 5px 12px !important;
+    height: 60px !important;
+    width: 150px !important;
+    outline: none !important;
+    text-decoration: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    text-transform: uppercase !important;
+    background-color: white !important;
+    border: 1px solid rgba(22, 76, 167, 0.6) !important;
+    border-radius: 10px !important;
+    color: #1d89ff !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    font-family: inherit !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1) !important;
+}
+
+button:not(.navbtn) span {
+    color: #164ca7;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+
+button:not(.navbtn):hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+button:not(.navbtn):hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+button:not(.navbtn):after {
+    left: 50%;
+}
+
+button:not(.navbtn):after {
+    position: absolute;
+    right: 0;
+    left: auto;
+    transition: 0.3s;
+    content: "";
+    width: 0;
+    bottom: 0;
+    height: 3px;
+    background: #164ca7;
+}
+
+button:not(.navbtn):hover {
+    cursor: pointer;
+}
+
+button:not(.navbtn):hover:after {
+    width: 100%;
+    left: 0;
+}
+
+html{
+  position: absolute !important;
+}
+
+nav {
+    z-index:12 !important;
+}
+
+footer {
+    z-index: 13 !important;
+}

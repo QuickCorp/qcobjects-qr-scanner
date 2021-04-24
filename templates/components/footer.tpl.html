@@ -1,1 +1,99 @@
-<p><a style="color:white" href="javascript:global.get('qrControllerInstance').showControls()" class="showControlsSwitch">Hide controls</a></p>
+<style>
+button.showControlsSwitch_button {
+  width:110%;
+  height: 35px;
+  margin:0 auto !important;
+  min-width: 60%;
+  vertical-align: middle;
+  border:0;
+  cursor:pointer;
+  outline:none;
+}
+p{
+  vertical-align: middle;
+  align-content: center;
+  color:#1a74d4;
+  padding: 10px 10px 10px 10px;
+  margin:1% auto;
+  cursor: pointer;
+}
+:root > .text {
+  color: #fff;
+  font: 16px;
+  line-height: 70px;
+  text-align: center;
+  letter-spacing: .16em;
+  position: absolute;
+  width: auto;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 60px;
+  margin: 0 auto;
+  width:50%;
+  cursor: pointer;
+  border:0;
+}
+
+.color-change-5x {
+	-webkit-animation: color-change-5x 8s linear infinite alternate both;
+	        animation: color-change-5x 8s linear infinite alternate both;
+  background-blend-mode: difference;
+}
+
+/**
+ * ----------------------------------------
+ * animation color-change-5x
+ * ----------------------------------------
+ */
+@-webkit-keyframes color-change-5x {
+  0% {
+    background: #19dcea;
+    border-radius: 10px;
+  }
+  25% {
+    background: #b22cff;
+    border-radius: 20px;
+  }
+  50% {
+    background: #ea2222;
+    border-radius: 30px;
+  }
+  75% {
+    background: #f5be10;
+    border-radius: 40px;
+  }
+  100% {
+    background: #3bd80d;
+    border-radius: 60px;
+  }
+}
+@keyframes color-change-5x {
+  0% {
+    background: #454545;
+    border-radius: 10px;
+  }
+  25% {
+    background: #000000;
+    border-radius: 20px;
+  }
+  50% {
+    background: #454545;
+    border-radius: 30px;
+  }
+  75% {
+    background: #666666;
+    border-radius: 40px;
+  }
+  100% {
+    background: #333333;
+    border-radius: 60px;
+  }
+}
+
+:root > .text p {
+  transform:none;
+  padding:0;
+  margin:0;
+}
+</style>
+<button aria-label="Log in" role="button" tabindex="-1" onclick="global.get('qrControllerInstance').showControls()" class="text color-change-5x showControlsSwitch_button" ><p class="showControlsSwitch">Hide controls</p></button>

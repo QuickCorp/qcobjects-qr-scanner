@@ -1,9 +1,78 @@
 <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --select-border: #777;
+  --select-focus: blue;
+  --select-arrow: var(--select-border);
+}
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+   outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  display: grid;
+}
+
+select {
+  // ...existing styles
+  grid-template-areas: "select";
+}
+
+select,
+select:after {
+  grid-area: select;
+}
+
+select {
+  // ...existing styles
+  align-items: center;
+}
+
+select:after {
+  // ...existing styles
+  justify-self: end;
+}
 :root, :host{
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 85px;
+    top: 100px;
     bottom: 0;
     right: 0;
     left: 0;
@@ -35,8 +104,26 @@
     object-fit: cover;
     z-index: -1;
 }
+.transparent-card {
+    margin: 0 auto;
+    background: rgba(255,255,255,0.3);
+    max-width: 80%;
+    border-radius: 27px;
+    padding: 3%;
+}
+.transparent-card2 {
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    min-width: 50%;
+    width: 50%;
+    display: block;
+    padding: 1%;
+    border-radius: 27px;
+    background: rgba(0,0,0,0.2);
+}
 </style>
 <video muted playsinline id="qr-video"></video>
+<div class="transparent-card">
 <h1>Scan from WebCam:</h1>
 <div>
     <b>Device has camera: </b>
@@ -52,13 +139,15 @@
     <br>
 </div>
 <b>Detected QR code: </b>
-<span id="cam-qr-result">None</span>
+<span class="transparent-card2" id="cam-qr-result">None</span>
 <br>
 <b>Last detected at: </b>
-<span id="cam-qr-result-timestamp"></span>
+<span class="transparent-card2" id="cam-qr-result-timestamp"></span>
 <hr>
 
 <h1>Scan from File:</h1>
 <input type="file" id="file-selector">
 <b>Detected QR code: </b>
-<span id="file-qr-result">None</span>
+<span class="transparent-card2" id="file-qr-result">None</span>
+<p class="footnote">This awesome app is a TWA made with <a href="https://qcobjects.dev">QCObjects</a> </p>
+</div>

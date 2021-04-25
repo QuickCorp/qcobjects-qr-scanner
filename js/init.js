@@ -30,6 +30,7 @@ import "https://cdn.qcobjects.dev/QCObjects.js";
 * or changing the static initial value in a config.json file
 */
 CONFIG.set('sourceType', 'module');
+CONFIG.set('start_url','');
 CONFIG.set('relativeImportPath', 'js/packages/');
 CONFIG.set('componentsBasePath', 'templates/components/');
 CONFIG.set('delayForReady', 1); // delay to wait before executing the first ready event, it includes imports

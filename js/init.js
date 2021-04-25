@@ -55,4 +55,4 @@ Component.cached=true;
 
 Import('org.quickcorp.custom'); // this will load js/packages/org.quickcorp.custom.js file
 
-RegisterWidgets("layout-basic", "splash-screen", "orientation-lock");
+RegisterWidgets("splash-screen", "layout-basic");

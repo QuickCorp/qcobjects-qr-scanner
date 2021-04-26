@@ -45,22 +45,18 @@ Package('org.qcobjects.services',[
       cached:false,
       method:'GET',
       headers:{'Content-Type':'application/json', 'Accept': 'application/vnd.npm.install-v1+json'},
-      url:null,
+      url:"https://us-central1-qcobjects-functions.cloudfunctions.net/npm-downloads",
       withCredentials:false,
       _new_ (o) {
         // service instantiated
-        var padl = function (digit, str) {return `${Array.matrix(new Number(digit)-str.length).join("")}${str.toString()}`;}
-        var d = new Date();
-        this.url = `https://api.npmjs.org/downloads/range/2015-05-01:${padl(4, d.getFullYear().toString())}-${padl(2, d.getMonth().toString())}-${padl(2,d.getDate().toString())}/qcobjects`;
-        logger.debug(this.url);
       },
       done:({request, service})=>{
-        var result = JSON.parse(service.template);
+        var serviceResponse = JSON.parse(service.template);
         service.template = {
-          startDate: result.start,
-          endDate: result.end,
-          downloads: result.downloads.map(function () {return d.downloads;}).sum()
-        };
+          startDate: (new Date(serviceResponse.startDate)).toString(),
+          endDate: (new Date(serviceResponse.endDate)).toString(),
+          downloads: serviceResponse.downloads.toString()
+        }
       }
   })
 ]);

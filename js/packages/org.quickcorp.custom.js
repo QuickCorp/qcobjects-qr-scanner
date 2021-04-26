@@ -1,4 +1,5 @@
 "use script";
+Import('org.qcobjects.cloud.auth.session.usertoken');
 Import('org.qcobjects.services');
 Import('org.qcobjects.sdk.controllers.qrscanner');
 Import('org.quickcorp.custom.models');

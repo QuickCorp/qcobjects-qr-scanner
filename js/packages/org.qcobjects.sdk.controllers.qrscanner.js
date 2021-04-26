@@ -28,15 +28,21 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
       }
     },
     setResult(label, result) {
+      let isURL = function (u){
+        return (function (u){let _ret_;try {let u=new URL(u);_ret_=true} catch (e){_ret_=false};return _ret_;})(u);
+      };
       const controller = this;
       const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
 
       label.textContent = result;
+      NotificationComponent.success(result);
       camQrResultTimestamp.textContent = new Date().toString();
       label.style.color = 'teal';
       clearTimeout(label.highlightTimeout);
       label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-      location.href=result;
+      if (isURL(result)){
+        location.href=result;
+      }
     },
     showControls () {
       var controller = this;

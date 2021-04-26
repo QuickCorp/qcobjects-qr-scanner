@@ -27,21 +27,25 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
 
       }
     },
+    __result_notified__:false,
     setResult(label, result) {
+      const controller = this;
       let isURL = function (u){
         return (function (u){let _ret_;try {let u=new URL(u);_ret_=true} catch (e){_ret_=false};return _ret_;})(u);
       };
-      const controller = this;
-      const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
+      if (!controller.__result_notified__){
+        const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
 
-      label.textContent = result;
-      NotificationComponent.success(result);
-      camQrResultTimestamp.textContent = new Date().toString();
-      label.style.color = 'teal';
-      clearTimeout(label.highlightTimeout);
-      label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-      if (isURL(result)){
-        location.href=result;
+        label.textContent = result;
+        NotificationComponent.success(result);
+        camQrResultTimestamp.textContent = new Date().toString();
+        label.style.color = 'teal';
+        clearTimeout(label.highlightTimeout);
+        label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+        if (isURL(result)){
+          location.href=result;
+        }
+        controller.__result_notified__ = true;
       }
     },
     showControls () {
@@ -51,6 +55,7 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
       if (typeof this.__show_controls__ === "undefined") {
         this.__show_controls__ = New(Toggle, {
           negative ({elementList, effect}) {
+            controller.__result_notified__ = false;
             componentRoot.style.background = "none";
             componentRoot.style.minHeight = "";
             elementList.map(e=>effect.apply(e, 1, 0));
@@ -58,6 +63,7 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
             Tag(".showControlsSwitch").map(e=>e.textContent = "Stop Scanning");
           },
           positive ({elementList, effect}) {
+            controller.__result_notified__ = true;
             componentRoot.style.background = "#111";
             componentRoot.style.minHeight = "1000px";
             elementList.map(e=>effect.apply(e, 0, 1));

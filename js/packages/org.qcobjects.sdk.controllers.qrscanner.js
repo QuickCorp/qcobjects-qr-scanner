@@ -37,7 +37,28 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
         const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();
 
         label.textContent = result;
+
+        let clipboard = function (content){
+          var clipboard_content = New(Component,{
+            name:'clipboard',
+            templateURI:'',
+            body:document.createElement('input'),
+            tplsource:'none'
+          });
+          clipboard_content.attachIn('body');
+          clipboard_content.body.defaultValue = content;
+          clipboard_content.body.select();
+          document.execCommand('copy');
+          document.body.removeChild(clipboard_content.body);
+        }
+
+        clipboard(result);
+
         NotificationComponent.success(result);
+        setTimeout(function () {
+          NotificationComponent.success("Copied to clipboard!");
+        }, 1500);
+        
         camQrResultTimestamp.textContent = new Date().toString();
         label.style.color = 'teal';
         clearTimeout(label.highlightTimeout);
@@ -80,6 +101,7 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
     done (){
       var controller = this;
       global.set("qrControllerInstance", controller);
+
 
       let qrscanner_load = function () {
           var QRScannerPath = CONFIG.get('qr-scanner-path','./js/packages/thirdparty/libs/qr-scanner/');

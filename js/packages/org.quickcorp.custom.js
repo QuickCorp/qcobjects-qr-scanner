@@ -1,4 +1,5 @@
 "use script";
+Import('org.qcobjects.services');
 Import('org.qcobjects.sdk.controllers.qrscanner');
 Import('org.quickcorp.custom.models');
 Import('org.quickcorp.custom.components');

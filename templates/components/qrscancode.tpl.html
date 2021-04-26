@@ -72,11 +72,13 @@ select:after {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 100px;
+    top: 0;
+    padding-top: 125px;
     bottom: 0;
     right: 0;
     left: 0;
     color: yellow;
+    background: #111;
 }
     canvas {
         display: none;
@@ -123,7 +125,7 @@ select:after {
 }
 </style>
 <video muted playsinline id="qr-video"></video>
-<div class="transparent-card">
+<div class="transparent-card controls">
 <h1>Scan from WebCam:</h1>
 <div>
     <b>Device has camera: </b>

@@ -45,6 +45,7 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
         if (isURL(result)){
           location.href=result;
         }
+        controller.showControls();
         controller.__result_notified__ = true;
       }
     },

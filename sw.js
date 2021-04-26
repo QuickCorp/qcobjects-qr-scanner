@@ -23,7 +23,7 @@
  * license document, but changing it is not allowed.
 */
 "use strict";
-const version = "";
+const version = "0.0.3";
 const appName = "qcobjects-qr-scanner";
 const cacheSufix = (Math.round(Date.now()/(1000*3600))).toString(); // 1 hour
 const cacheName = `qcobjects-app-${appName}-${version}-${cacheSufix}`;
@@ -34,12 +34,9 @@ self.addEventListener('install', e => {
     caches.open(cacheName).then(cache => {
       return cache.addAll([`${start_url}`,
 	"/",
-	".dockerignore",
-	"Dockerfile",
 	"LICENSE.txt",
 	"README.md",
 	"VERSION",
-	"app.js",
 	"css/components/button.css",
 	"css/components/card.css",
 	"css/components/hero/hero-call-to-action.css",
@@ -69,6 +66,7 @@ self.addEventListener('install', e => {
 	"favicon.ico",
 	"humans.txt",
 	"img/Q_web copy.png",
+	"img/Q_web-white.png",
 	"img/Q_web.png",
 	"img/Q_web.svg",
 	"img/icons/icon-128x128.png",
@@ -79,6 +77,7 @@ self.addEventListener('install', e => {
 	"img/icons/icon-512x512.png",
 	"img/icons/icon-72x72.png",
 	"img/icons/icon-96x96.png",
+	"img/logo-qcobjects-version.svg",
 	"img/logo-qcobjects-white.svg",
 	"img/logo-qcobjects.svg",
 	"img/logo.png",
@@ -92,6 +91,7 @@ self.addEventListener('install', e => {
 	"js/init.js",
 	"js/packages/installer.js",
 	"js/packages/org.qcobjects.sdk.controllers.qrscanner.js",
+	"js/packages/org.qcobjects.services.js",
 	"js/packages/org.quickcorp.custom.components.js",
 	"js/packages/org.quickcorp.custom.controllers.js",
 	"js/packages/org.quickcorp.custom.effects.js",
@@ -105,12 +105,8 @@ self.addEventListener('install', e => {
 	"js/packages/thirdparty/libs/qr-scanner/qr-scanner.js",
 	"js/packages/thirdparty/libs/qr-scanner/qr-scanner.min.js",
 	"js/packages/thirdparty/libs/qr-scanner/qr-scanner.min.js.map",
-	"localhost-cert.pem",
-	"localhost-privkey.pem",
 	"manifest.json",
-	"package-lock.json",
 	"package.json",
-	"res/.pgbomit",
 	"res/icon/android/drawable-hdpi-icon.png",
 	"res/icon/android/drawable-ldpi-icon.png",
 	"res/icon/android/drawable-mdpi-icon.png",
@@ -174,9 +170,6 @@ self.addEventListener('install', e => {
 	"res/screen/windows/SplashScreenPhone.scale-240.png",
 	"res/screen/wp8/screen-portrait.jpg",
 	"robots.txt",
-	"spec/support/jasmine.json",
-	"spec/testsSpec.js",
-	"spec.html",
 	"templates/components/article1.tpl.html",
 	"templates/components/article2.tpl.html",
 	"templates/components/article3.tpl.html",
@@ -201,9 +194,13 @@ self.addEventListener('install', e => {
 	"templates/components/main.tpl.html",
 	"templates/components/modal.tpl.html",
 	"templates/components/nav.tpl.html",
+	"templates/components/pages/author.tpl.html",
 	"templates/components/pages/page1.tpl.html",
 	"templates/components/pages/page2.tpl.html",
 	"templates/components/pages/page3.tpl.html",
+	"templates/components/pages/qcobjects-forks-stars.tpl.html",
+	"templates/components/pages/qcobjects-npm-downloads.tpl.html",
+	"templates/components/pages/qcobjects.tpl.html",
 	"templates/components/product.tpl.html",
 	"templates/components/profile.tpl.html",
 	"templates/components/pwa.tpl.html",

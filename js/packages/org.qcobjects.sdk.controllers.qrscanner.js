@@ -30,8 +30,8 @@ Package('org.qcobjects.sdk.controllers.qrscanner',[
     __result_notified__:false,
     setResult(label, result) {
       const controller = this;
-      let isURL = function (u){
-        return (function (u){let _ret_;try {let u=new URL(u);_ret_=true} catch (e){_ret_=false};return _ret_;})(u);
+      var isURL = function (u){
+        return (function (u){var _ret_;try {var u=new URL(u);_ret_=true} catch (e){_ret_=false};return _ret_;})(u);
       };
       if (!controller.__result_notified__){
         const camQrResultTimestamp = controller.component.shadowRoot.subelements('#cam-qr-result-timestamp').pop();

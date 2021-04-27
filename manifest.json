@@ -10,7 +10,7 @@
   "dir": "auto",
   "scope": "/qcobjects-qr-scanner/",
   "categories": ["utilities"],
-  "start_url": "/?homescreen=1",
+  "start_url": "./?homescreen=1",
   "icons": [{
       "src": "img/icons/icon-72x72.png",
       "sizes": "72x72",

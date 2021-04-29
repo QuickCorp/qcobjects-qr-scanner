@@ -2,7 +2,7 @@
 
 A QR Scanner App (PWA - TWA) powered by QCObjects
 
-![demo](img/qcobjects-live-demo-qr-scanner.gif)
+![demo](https://quickcorp.github.io/qcobjects-qr-scanner/img/qcobjects-live-demo-qr-scanner.gif)
 
 # Project Structure
 
@@ -53,9 +53,9 @@ Create a new app using this template
 # Test on local
 
 ```shell
-> qcobjects launch app 
+> qcobjects launch app
 ```
 
 # Live demo
 
-Do you want to see the live demo of this app? [check it out](https://quickcorp-demos.gitlab.io/qcobjects-qr-demo/)
+Do you want to see the live demo of this app? [check it out](https://quickcorp.github.io/qcobjects-qr-scanner/)

@@ -41,6 +41,9 @@ Package('org.qcobjects.cloud.auth.session.usertoken',[
     getGlobalUserPriority () {
       return this.getGlobalUser(...arguments).priority;
     },
+    getLoginCredentialsToken (username, password) {
+      return _Crypt.encrypt(`${username}${password}`, this.getGlobalUserToken(username));
+    },
     closeGlobalSession () {
       this.getGlobalUser(...arguments);
       var username = [...arguments].join("|");
@@ -51,6 +54,5 @@ Package('org.qcobjects.cloud.auth.session.usertoken',[
         SessionUserToken.user = {};
       }
     }
-
   })
 ]);

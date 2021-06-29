@@ -10,7 +10,7 @@ Package('org.qcobjects.cloud.auth.session.usertoken',[
           index: __instance__.__instanceID.toString(),
           load (cacheController) {
             __instance__.user = {
-                    id:__instance__.__instanceID.toString(),
+                    priority:__instance__.__instanceID.toString(),
                     token: _Crypt.encrypt(`${navigator.userAgent}|${o.username}|${(+(new Date())).toString()}`,origin)
                   };
             return __instance__.user;
@@ -21,21 +21,34 @@ Package('org.qcobjects.cloud.auth.session.usertoken',[
           }
         });
     },
-    getGlobalUserToken () {
+    getGlobalUser() {
       var username = [...arguments].join("|");
       var __index__ = "userToken_"+btoa(username);
-      if (typeof global.get(__index__) === "undefined"){
+      if (typeof global.get(__index__) === "undefined" || global.get(__index__) === null){
         global.set(__index__, New(SessionUserToken, {
           username: username
         }));
       }
-      return global.get(__index__).user.token;
+      SessionUserToken.user = global.get(__index__).user;
+      return global.get(__index__).user;
+    },
+    getGlobalUserToken () {
+      return this.getGlobalUser(...arguments).token;
+    },
+    getGlobalUserId () {
+      return this.getGlobalUser(...arguments).id;
+    },
+    getGlobalUserPriority () {
+      return this.getGlobalUser(...arguments).priority;
     },
     closeGlobalSession () {
+      this.getGlobalUser(...arguments);
       var username = [...arguments].join("|");
       var __index__ = "userToken_"+btoa(username);
       if (typeof global.get(__index__) !== "undefined"){
         global.get(__index__).__cache__.clear();
+        global.set(__index__, null);
+        SessionUserToken.user = {};
       }
     }
 

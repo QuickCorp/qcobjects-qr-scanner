@@ -10,7 +10,7 @@
 </style>
 
 <header>
-  <component name="header" shadowed="true" controllerClass="HeaderController" effectClass="MainTransitionEffect">
+  <component name="header" shadowed="true" controllerClass="HeaderController" >
     <routing path="^#signup$" name="blank"></routing>
     <routing path="^#signin$" name="blank"></routing>
     <routing path="^#page1$" name="blank"></routing>
@@ -43,7 +43,7 @@
 </aside>
 <main role="main">
   <section>
-    <component name="contentblock" effectClass="MainTransitionEffect">
+    <component name="contentblock" >
         <routing path="#author" name="pages/author"></routing>
         <routing path="#qcobjects" name="pages/qcobjects"></routing>
         <routing path="^#signup$" name="signup" ></routing>

@@ -1,7 +1,7 @@
 'use strict';
 
 Package('org.qcobjects.sdk.controllers.qrscanner',[
-  Class('QRScanController',Object,{
+  Class('QRScanController',Controller,{
     dependencies:[],
     component:null,
     scanner:null,

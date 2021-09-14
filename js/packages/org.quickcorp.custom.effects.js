@@ -1,12 +1,12 @@
-"use strict";
-Package("org.quickcorp.custom.effects",[
-  Class("MainTransitionEffect",TransitionEffect,{
-    duration:780,
+'use strict';
+Package('org.quickcorp.custom.effects',[
+  Class('MainTransitionEffect',TransitionEffect,{
+    duration:2000,
     defaultParams:{
       alphaFrom:0,
       alphaTo:1
     },
-    effects:["Fade","MoveYInFromBottom"],
+    effects:['Fade'],
     fitToHeight:true
   })
 ]);

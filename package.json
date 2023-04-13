@@ -1,5 +1,6 @@
 {
   "name": "qcobjects-qr-scanner",
+<<<<<<< HEAD
   "version": "2.4.2",
   "description": "A QR Scanner example on a PWA - TWA powered by QCObjects",
   "main": "js/init.js",
@@ -19,6 +20,9 @@
     "gae-server": "node -e \"require('qcobjects-cli/qcobjects-gae-http-server')\"",
     "build": "exit 0"
   },
+=======
+  "version": "0.0.7",
+>>>>>>> 88b0b8d (minor improvements v2.4)
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:quickcorp-demos/qcobjects-qr-demo.git"

@@ -1,10 +1,10 @@
-'use strict';
-Import ('installer');
+/* eslint-disable no-undef */
+"use strict";
 
-Package('org.quickcorp.custom.controllers',[
-	Class('MainController',Controller,{
-	  dependencies:[],
-	  component:null,
+Package("org.quickcorp.custom.controllers",[
+	Class("MainController",Controller,{
+    dependencies:[],
+    component:null,
 		__appInitialized:false,
 		loadDependencies(callback){
       var controller = this;
@@ -12,26 +12,20 @@ Package('org.quickcorp.custom.controllers',[
         callback.call(controller);
       } else {
 				controller.dependencies.push(New(SourceJS,{
-  				url:'cordova.js',
-  				external:false,
+          url:"cordova.js",
+          external:false,
 					done: function (){
 						controller.dependencies.push(New(SourceJS,{
-		  				url:'js/index.js',
-		  				external:false,
+              url:"js/index.js",
+              external:false,
 							done: function (){callback.call(controller);}
-		  			}));
+            }));
 					}
-  			}));
+        }));
 
       }
     },
-	  _new_:function (o){
-	    this.__new__(o);
-	    var controller=this;
-	    //TODO: Implement
-	  },
 		done:function(){
-			var controller = this;
 
 			this.loadDependencies(()=>{
 				if (!MainController.__appInitialized){
@@ -43,10 +37,10 @@ Package('org.quickcorp.custom.controllers',[
 
 		}
 	}),
-	Class('PWAController',Object,{
+	Class("PWAController",Object,{
 		component:null,
 		_new_:function (o){
-			logger.debug('PWAController Element Initialized');
+			logger.debug("PWAController Element Initialized");
 			this.component = o.component;
 		},
 		done: function (){
@@ -54,7 +48,7 @@ Package('org.quickcorp.custom.controllers',[
 			this.component.body.innerHTML="";
 		}
 	}),
-  Class('SideNavController',Object,{
+  Class("SideNavController",Object,{
   dependencies:[],
   component:null,
   visibility:false,
@@ -65,8 +59,8 @@ Package('org.quickcorp.custom.controllers',[
     }
     this.component.body.style.width="100%";
     this.component.body.style.overflowX="visible";
-    this.component.body.parentElement.subelements('.navbtn')[0].style.display='none';
-		this.component.body.parentElement.subelements('.closebtn')[0].style.display='block';
+    this.component.body.parentElement.subelements(".navbtn")[0].style.display="none";
+		this.component.body.parentElement.subelements(".closebtn")[0].style.display="block";
     this.visibility = true;
     return this.visibility;
   },
@@ -76,8 +70,8 @@ Package('org.quickcorp.custom.controllers',[
     }
     this.component.body.style.width="0px";
     this.component.body.style.overflowX="hidden";
-    this.component.body.parentElement.subelements('.navbtn')[0].style.display='block';
-		this.component.body.parentElement.subelements('.closebtn')[0].style.display='none';
+    this.component.body.parentElement.subelements(".navbtn")[0].style.display="block";
+		this.component.body.parentElement.subelements(".closebtn")[0].style.display="none";
     this.visibility = false;
     return this.visibility;
   },
@@ -102,37 +96,20 @@ Package('org.quickcorp.custom.controllers',[
     done: function (){
     }
   }),
-	Class('HeaderController',Controller,{
-	  dependencies:[],
-	  component:null,
+	Class("HeaderController",Controller,{
+    dependencies:[],
+    component:null,
 		installer:null,
 		loadInstallerButton:function (){
 //			this.installer = new Installer(this.component.body.subelements('#installerbutton')[0]);
 		},
-	  _new_:function (o){
-	    this.__new__(o);
-	    //TODO: Implement
-	  },
 		done: function (){
 //			this.loadInstallerButton();
 		}
 	}),
-  Class('Controller1',Controller,{
-    dependencies:[],
-    component:null,
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
+  class FooterController extends Controller {
+    done (){
+      global.set("footerComponent", this.component);
     }
-  }),
-  Class('Controller2',Controller,{
-    dependencies:[],
-    component:null,
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
-    }
-  }),
+  }
 ]);

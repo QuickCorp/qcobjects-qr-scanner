@@ -8,15 +8,14 @@ Author URL : https://github.com/jeanmachuca
 /* NAV */
 
 body {
-  background-color: #eaeaea !important;
+  background-color: #111 !important;
 }
 
-component, component>section, component>article {
-    background-color: #f7f7f7 !important;
+quick-component, quick-component>section, quick-component>article {
     border-radius: 27px;
 }
 
-component>section{
+quick-component>section{
   margin-top: 5%;
 }
 
@@ -24,18 +23,18 @@ component>section{
   background-color: white !important;
 }
 
-nav>component {
+nav>quick-component {
   background: rgb(2,0,36) !important;
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,6,78,1) 0%, rgba(18,18,154,1) 40%, rgba(14,68,180,1) 65%, rgba(15,62,85,1) 100%, rgba(0,212,255,1) 100%) !important;
   bottom:0 !important;
 }
 
-nav>component a {
+nav>quick-component a {
     font-size: 15px !important;
     color: #28197e !important;
 }
 
-nav>component a:hover {
+nav>quick-component a:hover {
     color: #4aa7dd !important;
 }
 
@@ -250,9 +249,9 @@ html{
 }
 
 nav {
-    z-index:12 !important;
+    z-index:13 !important;
 }
 
 footer {
-    z-index: 13 !important;
+    z-index: 12 !important;
 }

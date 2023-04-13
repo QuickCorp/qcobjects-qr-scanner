@@ -1,4 +1,5 @@
-'use strict';
+/* eslint-disable no-undef */
+"use strict";
 /**
  * QCObjects New App PWA Template 1.x
  * ________________
@@ -23,26 +24,26 @@
  * Everyone is permitted to copy and distribute verbatim copies of this
  * license document, but changing it is not allowed.
 */
-import "https://cdn.qcobjects.dev/QCObjects.js";
+import "https://cdnjs.cloudflare.com/ajax/libs/qcobjects/2.4.52/QCObjects.js";
 /*
 * The next values are the default settings
 * You can change any value in runtime by using CONFIG.set
 * or changing the static initial value in a config.json file
 */
-CONFIG.set('sourceType', 'module');
-CONFIG.set('start_url','');
-CONFIG.set('relativeImportPath', 'js/packages/');
-CONFIG.set('componentsBasePath', 'templates/components/');
-CONFIG.set('delayForReady', 1); // delay to wait before executing the first ready event, it includes imports
-CONFIG.set('preserveComponentBodyTag', false); // don't use <componentBody></componentBody> tag
-CONFIG.set('useConfigService', false); // Load settings from config.json
-CONFIG.set('routingWay','hash'); // routingWay possible values are 'hash','pathname','search'
-CONFIG.set('useSDK',true); // it is recommended to use the SDK that is dynamically loaded, but you can chose not to load it
-CONFIG.set('useLocalSDK',false); // on the frontend side you can chose whether to load the SDK from sdk.qcobjects.dev or from your local website
-CONFIG.set('tplextension','tpl.html'); // this is the file extension to locate the template files (if component.name = 'main' then template name will be main.tpl.html)
-CONFIG.set('asynchronousImportsLoad',true); // it is recommended to load the Import declarations in an asyncronous way
-CONFIG.set('serviceWorkerURI','/sw.js'); //QCObjects will register an launch this service worker automatically to work offline
-CONFIG.set('serviceWorkerScope', "/qcobjects-qr-scanner/");
+CONFIG.set("sourceType", "module");
+CONFIG.set("start_url","");
+CONFIG.set("relativeImportPath", "js/packages/");
+CONFIG.set("componentsBasePath", "templates/components/");
+CONFIG.set("delayForReady", 1); // delay to wait before executing the first ready event, it includes imports
+CONFIG.set("preserveComponentBodyTag", false); // don't use <componentBody></componentBody> tag
+CONFIG.set("useConfigService", false); // Load settings from config.json
+CONFIG.set("routingWay","hash"); // routingWay possible values are 'hash','pathname','search'
+CONFIG.set("useSDK",true); // it is recommended to use the SDK that is dynamically loaded, but you can chose not to load it
+CONFIG.set("useLocalSDK",false); // on the frontend side you can chose whether to load the SDK from sdk.qcobjects.dev or from your local website
+CONFIG.set("tplextension","tpl.html"); // this is the file extension to locate the template files (if component.name = 'main' then template name will be main.tpl.html)
+CONFIG.set("asynchronousImportsLoad",true); // it is recommended to load the Import declarations in an asyncronous way
+CONFIG.set("serviceWorkerURI","/sw.js"); //QCObjects will register an launch this service worker automatically to work offline
+CONFIG.set("serviceWorkerScope", "/qcobjects-qr-scanner/");
 // if Component.cached is true, all the Class('Component') declarations will save the template in a localStorage cache
 // until a cached=false attribute is found in a <component> html declaration
 logger.debugEnabled = true;
@@ -53,6 +54,11 @@ Component.cached=true;
  */
 
 
-Import('org.quickcorp.custom'); // this will load js/packages/org.quickcorp.custom.js file
+Import("org.quickcorp.custom"); // this will load js/packages/org.quickcorp.custom.js file
 
 RegisterWidgets("splash-screen", "layout-basic");
+(function (){
+    var b= document.createElement("base");
+    b.setAttribute("href",location.href);
+    document.querySelector("head").appendChild(b);
+})();

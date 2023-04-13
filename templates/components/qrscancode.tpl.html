@@ -1,74 +1,81 @@
 <style>
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-:root {
-  --select-border: #777;
-  --select-focus: blue;
-  --select-arrow: var(--select-border);
-}
-select {
-  // A reset of styles, including removing the default dropdown arrow
-  appearance: none;
-  // Additional resets for further consistency
-  background-color: transparent;
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-   outline: none;
-}
-select::-ms-expand {
-  display: none;
-}
-select {
-  width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
-  border: 1px solid var(--select-border);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  font-size: 1.25rem;
-  cursor: pointer;
-  line-height: 1.1;
-  background-color: #fff;
-  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
-}
-select::after {
-  content: "";
-  width: 0.8em;
-  height: 0.5em;
-  background-color: var(--select-arrow);
-  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-  display: grid;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-select {
-  // ...existing styles
-  grid-template-areas: "select";
-}
+  :root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+  }
 
-select,
-select:after {
-  grid-area: select;
-}
+  select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    // Additional resets for further consistency
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+  }
 
-select {
-  // ...existing styles
-  align-items: center;
-}
+  select::-ms-expand {
+    display: none;
+  }
 
-select:after {
-  // ...existing styles
-  justify-self: end;
-}
-:root, :host{
+  select {
+    width: 100%;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  }
+
+  select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    display: grid;
+  }
+
+  select {
+    // ...existing styles
+    grid-template-areas: "select";
+  }
+
+  select,
+  select:after {
+    grid-area: select;
+  }
+
+  select {
+    // ...existing styles
+    align-items: center;
+  }
+
+  select:after {
+    // ...existing styles
+    justify-self: end;
+  }
+
+  :root,
+  :host {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -79,21 +86,26 @@ select:after {
     left: 0;
     color: yellow;
     background: #111;
-}
-    canvas {
-        display: none;
-    }
-    hr {
-        margin-top: 32px;
-    }
-    input[type="file"] {
-        display: block;
-        margin-bottom: 16px;
-    }
-    div {
-        margin-bottom: 16px;
-    }
-    video {
+  }
+
+  canvas {
+    display: none;
+  }
+
+  hr {
+    margin-top: 32px;
+  }
+
+  input[type="file"] {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  div {
+    margin-bottom: 16px;
+  }
+
+  video {
     position: fixed;
     transform: scaleX(-1);
     /* max-width: 375px; */
@@ -105,15 +117,17 @@ select:after {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-}
-.transparent-card {
+  }
+
+  .transparent-card {
     margin: 0 auto;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     max-width: 80%;
     border-radius: 27px;
     padding: 3%;
-}
-.transparent-card2 {
+  }
+
+  .transparent-card2 {
     margin: 0 auto;
     /* border: 1px solid black; */
     min-width: 50%;
@@ -121,35 +135,110 @@ select:after {
     display: block;
     padding: 1%;
     border-radius: 27px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .qr-video-box {
+    border: 0.3em solid yellow;
+    background: none;
+    min-height: 300px;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-top: 20%;
+    border-style: dotted;
+    border-radius: 2em;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    right: 50px;    
+  }
+  
+/**
+ * ----------------------------------------
+ * animation color-change-5x
+ * ----------------------------------------
+ */
+
+ .box-color-change-5x {
+	-webkit-animation: box-color-change-5x 13s linear infinite alternate both;
+	        animation: box-color-change-5x 13s linear infinite alternate both;
+  background-blend-mode: difference;
+} 
+ @-webkit-keyframes box-color-change-5x {
+  0% {
+    border-color: #f2ff00;
+    border-radius: 0.09em;
+  }
+  25% {
+    border-color: #c2bf11;
+    border-radius: 1.07em;
+  }
+  50% {
+    border-color: #959a1a;
+    border-radius: 1.5em;
+  }
+  75% {
+    border-color: #8b9302;
+    border-radius: 1.07em;
+  }
+  100% {
+    border-color: #c3bc02;
+    border-radius: 0.08em;
+  }
 }
+@keyframes box-color-change-5x {
+  0% {
+    border-color: #f2ff00;
+    border-radius: 0.09em;
+  }
+  25% {
+    border-color: #c2bf11;
+    border-radius: 1.07em;
+  }
+  50% {
+    border-color: #959a1a;
+    border-radius: 1.5em;
+  }
+  75% {
+    border-color: #8b9302;
+    border-radius: 1.07em;
+  }
+  100% {
+    border-color: #c3bc02;
+    border-radius: 0.08em;
+  }
+}
+
 </style>
+<div class="qr-video-container">
 <video muted playsinline id="qr-video"></video>
+<div class="qr-video-box box-color-change-5x"></div>
+</div>
 <div class="transparent-card controls">
-<h1>Scan from WebCam:</h1>
-<div>
+  <h1>Scan from WebCam:</h1>
+  <div>
     <b>Device has camera: </b>
     <span id="cam-has-camera"></span>
     <br>
-</div>
-<div>
+  </div>
+  <div>
     <select id="inversion-mode-select">
-        <option value="original">Scan original (dark QR code on bright background)</option>
-        <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
-        <option value="both">Scan both</option>
+      <option value="original">Scan original (dark QR code on bright background)</option>
+      <option value="invert">Scan with inverted colors (bright QR code on dark background)</option>
+      <option value="both">Scan both</option>
     </select>
     <br>
-</div>
-<b>Detected QR code: </b>
-<span class="transparent-card2" id="cam-qr-result">None</span>
-<br>
-<b>Last detected at: </b>
-<span class="transparent-card2" id="cam-qr-result-timestamp"></span>
-<hr>
+  </div>
+  <b>Detected QR code: </b>
+  <span class="transparent-card2" id="cam-qr-result">None</span>
+  <br>
+  <b>Last detected at: </b>
+  <span class="transparent-card2" id="cam-qr-result-timestamp"></span>
+  <hr>
 
-<h1>Scan from File:</h1>
-<input type="file" id="file-selector">
-<b>Detected QR code: </b>
-<span class="transparent-card2" id="file-qr-result">None</span>
-<p class="footnote">This awesome app is a TWA powered by <a href="https://qcobjects.dev">QCObjects</a> </p>
+  <h1>Scan from File:</h1>
+  <input type="file" id="file-selector">
+  <b>Detected QR code: </b>
+  <span class="transparent-card2" id="file-qr-result">None</span>
+  <p class="footnote">This awesome app is a TWA powered by <a href="https://qcobjects.dev">QCObjects</a> </p>
 </div>

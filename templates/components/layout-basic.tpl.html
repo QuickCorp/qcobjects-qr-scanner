@@ -2,15 +2,15 @@
   /*
   * Main Layout Styles
   */
-  @import url('https://sdk.qcobjects.dev/css/basic-layout.css');
-  @import url('css/index.css');
+  @import url("https://sdk.qcobjects.dev/css/basic-layout.css");
+  @import url("css/index.css");
 
   /* uncomment the next line to apply a theme */
   /* @import url('css/theme/cyan/style.css'); */
 </style>
 
 <header>
-  <component name="header" shadowed="true" controllerClass="HeaderController" >
+  <quick-component name="header" shadowed="true" controllerClass="HeaderController">
     <routing path="^#signup$" name="blank"></routing>
     <routing path="^#signin$" name="blank"></routing>
     <routing path="^#page1$" name="blank"></routing>
@@ -22,47 +22,48 @@
     <routing path="^#two-column-header$" name="hero/hero-two-column-form"></routing>
     <routing path="^#$" name="header"></routing>
     <routing path="" name="header"></routing>
-</component>
+  </quick-component>
 </header>
 <aside>
   <nav>
     <span class="topnav">
-      <component name="topmenu">
-          <routing path="#page1" name="blank"></routing>
-          <routing path="#page2" name="blank"></routing>
-          <routing path="#page3" name="blank"></routing>
-          <routing path="#signup" name="blank"></routing>
-          <routing path="#signin" name="blank"></routing>
-          <routing path="#" name="topmenu"></routing>
-          <routing path="" name="topmenu"></routing>
-      </component>
+      <quick-component name="topmenu">
+        <routing path="#page1" name="blank"></routing>
+        <routing path="#page2" name="blank"></routing>
+        <routing path="#page3" name="blank"></routing>
+        <routing path="#signup" name="blank"></routing>
+        <routing path="#signin" name="blank"></routing>
+        <routing path="#" name="topmenu"></routing>
+        <routing path="" name="topmenu"></routing>
+      </quick-component>
     </span>
-    <button  aria-label="nav button" role="button" tabindex="-1" class="navbtn" onclick="global.sideNavController.toggle()"></button>
-    <component name="nav" controllerClass="SideNavController"></component>
+    <button aria-label="nav button" role="button" tabindex="-1" class="navbtn"
+      onclick="global.sideNavController.toggle()"></button>
+    <quick-component name="nav" controllerClass="SideNavController"></quick-component>
   </nav>
 </aside>
 <main role="main">
   <section>
-    <component name="contentblock" >
-        <routing path="#author" name="pages/author"></routing>
-        <routing path="#qcobjects" name="pages/qcobjects"></routing>
-        <routing path="^#signup$" name="signup" ></routing>
-        <routing path="^#loading$" name="loading"></routing>
-        <routing path="^#signupsuccessful$" name="signupsuccessful"></routing>
-        <routing path="#signin" name="login2"></routing>
-        <routing path="#" name="contentblock"></routing>
-        <routing path="" name="contentblock"></routing>
-      </component>
+    <quick-component name="contentblock">
+      <routing path="#author" name="pages/author"></routing>
+      <routing path="#qcobjects" name="pages/qcobjects"></routing>
+      <routing path="^#signup$" name="signup"></routing>
+      <routing path="^#loading$" name="loading"></routing>
+      <routing path="^#signupsuccessful$" name="signupsuccessful"></routing>
+      <routing path="#signin" name="login2"></routing>
+      <routing path="#" name="contentblock"></routing>
+      <routing path="" name="contentblock"></routing>
+    </quick-component>
   </section>
 </main>
 <footer>
-  <component name="footer"  effectClass="MainTransitionEffect">
-      <routing path="^#signup$" name="signupbuttons"></routing>
-      <routing path="^#loading$" name="loadingfooter"></routing>
-      <routing path="^#signupsuccessful$" name="signupsuccessfulfooter"></routing>
-      <routing path="#author" name="blank"></routing>
-      <routing path="#qcobjects" name="blank"></routing>
-      <routing path="^#$" name="footer"></routing>
-      <routing path="^$" name="footer"></routing>
-  </component>
+  <quick-component name="footer" effectClass="MainTransitionEffect" shadowed="true" controllerClass="FooterController">
+    <routing path="^#signup$" name="signupbuttons"></routing>
+    <routing path="^#loading$" name="loadingfooter"></routing>
+    <routing path="^#signupsuccessful$" name="signupsuccessfulfooter"></routing>
+    <routing path="#author" name="blank"></routing>
+    <routing path="#qcobjects" name="blank"></routing>
+    <routing path="^#$" name="footer"></routing>
+    <routing path="^$" name="footer"></routing>
+  </quick-component>
 </footer>

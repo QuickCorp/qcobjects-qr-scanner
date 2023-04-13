@@ -121,7 +121,7 @@ nav {
   padding: 20px;
 }
 
-nav>component {
+nav>quick-component {
   width: 0;
   position: fixed;
   z-index: 1;
@@ -136,7 +136,7 @@ nav>component {
   padding-bottom: 20%;
 }
 
-nav>component a {
+nav>quick-component a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 15px;
@@ -145,7 +145,7 @@ nav>component a {
   transition: 0.3s;
 }
 
-nav>component a:hover {
+nav>quick-component a:hover {
   color: #f1f1f1;
 }
 
@@ -197,7 +197,7 @@ nav>button.navbtn:after {
   content: '\2630';
 }
 
-nav>component>span.closebtn {
+nav>quick-component>span.closebtn {
   position: fixed;
   display: none;
   top: 0;
@@ -206,7 +206,7 @@ nav>component>span.closebtn {
   margin-left: 50px;
 }
 
-nav>component>span.closebtn:after {
+nav>quick-component>span.closebtn:after {
   content: "\00d7";
 }
 
@@ -309,7 +309,6 @@ footer {
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background: #fff7f7;
   z-index: 10;
 }
 
@@ -347,8 +346,8 @@ button:not(.navbtn):hover {
 /* END BUTTONS */
 /* FORM ELEMENTS FOR SIGNUP*/
 /* Full-width input fields */
-component[name=signup] input[type=text],
-component[name=signup] input[type=password] {
+quick-component[name=signup] input[type=text],
+quick-component[name=signup] input[type=password] {
   width: 80%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -357,24 +356,24 @@ component[name=signup] input[type=password] {
   background: #f1f1f1;
 }
 
-component[name=signup] input[type=checkbox] {
+quick-component[name=signup] input[type=checkbox] {
   margin-left: 20px;
 }
 
-component[name=signup] input[type=text]:focus,
-component[name=signup] input[type=password]:focus {
+quick-component[name=signup] input[type=text]:focus,
+quick-component[name=signup] input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-component[name=signup] hr {
+quick-component[name=signup] hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
   width: 100% !important;
 }
 
 /* Set a style for all buttons */
-component[name=signup] button {
+quick-component[name=signup] button {
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -384,34 +383,34 @@ component[name=signup] button {
   opacity: 0.9;
 }
 
-component[name=signup] button:hover {
+quick-component[name=signup] button:hover {
   opacity: 1;
 }
 
 /* Extra styles for the cancel button */
-component[name=signup] .cancelbtn {
+quick-component[name=signup] .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
 
 /* Float cancel and signup buttons and add an equal width */
-component[name=footer] .cancelbtn,
-component[name=footer] .signupbtn {
+quick-component[name=footer] .cancelbtn,
+quick-component[name=footer] .signupbtn {
   float: left;
   width: 45%;
   margin: .5%;
 }
 
 /* Add padding to container elements */
-component[name=signup] .container {
+quick-component[name=signup] .container {
   padding: 20px;
   width: 87% !important;
   height: 100%;
 }
 
 /* Clear floats */
-component[name=signup] .clearfix::after,
-component[name=footer] .clearfix::after {
+quick-component[name=signup] .clearfix::after,
+quick-component[name=footer] .clearfix::after {
   content: "";
   clear: both;
   display: table;
@@ -419,7 +418,7 @@ component[name=footer] .clearfix::after {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  component[name=signup] .cancelbtn, component[name=signup] .signupbtn {
+  quick-component[name=signup] .cancelbtn, quick-component[name=signup] .signupbtn {
     width: 100%;
   }
 }

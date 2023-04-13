@@ -1,6 +1,6 @@
 {
   "name": "qcobjects-qr-scanner",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:quickcorp-demos/qcobjects-qr-demo.git"

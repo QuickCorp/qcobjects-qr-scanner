@@ -4,7 +4,7 @@
   "description": "A QR Scanner example on a PWA - TWA powered by QCObjects",
   "main": "js/init.js",
   "scripts": {
-    "test": "(npx eslint *.js js/*.js js/packages/*.js --fix) && (npx jasmine)",
+    "test": "(npx eslint *.js js/*.js js/packages/*.js --debug --fix) && (npx jasmine)",
     "sync": "git add . && git commit -am ",
     "preversion": "npm i --upgrade && npm test",
     "postversion": "git push && git push --tags",

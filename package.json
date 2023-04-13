@@ -1,6 +1,6 @@
 {
   "name": "qcobjects-qr-scanner",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "A QR Scanner example on a PWA - TWA powered by QCObjects",
   "main": "js/init.js",
   "scripts": {
